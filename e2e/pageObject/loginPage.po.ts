@@ -17,5 +17,6 @@ export class LoginPage{
         await page.locator(selectors.loginInput).fill(login);
         await page.locator(selectors.passwordInput).fill(password);
         await page.locator(selectors.loginButton).click();
+        await expect(page).toHaveURL(/schedule\/day-view/);
     }
 }

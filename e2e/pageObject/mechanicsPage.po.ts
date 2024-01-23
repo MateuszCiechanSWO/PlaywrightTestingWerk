@@ -1,4 +1,4 @@
-import { test, expect, type Page } from '@playwright/test';
+import { type Page } from '@playwright/test';
 
 export const selectors = {
     addMechanicButton: "div.add",
@@ -22,6 +22,7 @@ export class MechanicsPage{
     }
 
     async typePrefix(page: Page, prefix: string){
+        await page.locator(selectors.prefixInput).click();
         await page.locator(selectors.prefixInput).fill(prefix);
     }
 

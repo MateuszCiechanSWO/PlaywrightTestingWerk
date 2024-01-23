@@ -1,0 +1,8 @@
+{
+    "name": "partName",
+    "quantity": "12",
+    "purchasePrice": "50",
+    "salesPrice": "75",
+    "partNumber": "part",
+    "orderNumber": "order"
+}
