@@ -1,4 +1,5 @@
 import { type Page } from '@playwright/test';
+import { BasePage } from './basePage.po';
 
 export const selectors = {
     addMechanicButton: "div.add",
@@ -9,12 +10,10 @@ export const selectors = {
     saveAndInviteButton: "button[data-testid=invite-mechanic-button]",
 }
 
-export class MechanicsPage{
-    readonly page: Page;
+export class MechanicsPage extends BasePage {
 
-    constructor(page: Page)
-    {
-        this.page = page;
+    constructor(page: Page){
+        super(page, '');
     }
     
     async typeMechanicFullName(page: Page, mechanicName: string){

@@ -1,4 +1,5 @@
-import { test, expect, type Page } from '@playwright/test';
+import { type Page } from '@playwright/test';
+import { BasePage } from './/basePage.po';
 
 const selectors = {
     dayViewButton: "button[data-testid=day-view-button]",
@@ -7,12 +8,9 @@ const selectors = {
     workspacesViewButton: "button[data-testid=workspaces-button]",
 }
 
-export class CalendarPage{
-    readonly page: Page;
-
-    constructor(page: Page)
-    {
-        this.page = page;
+export class CalendarPage extends BasePage {
+    constructor(page: Page){
+        super(page, '');
     }
     
     async switchToDayView(page: Page){

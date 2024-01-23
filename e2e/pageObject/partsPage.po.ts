@@ -1,4 +1,5 @@
 import { type Page } from '@playwright/test';
+import { BasePage } from './/basePage.po';
 
 export const selectors = {
     addPartsButton: "button[data-testid=addPartsButton]",
@@ -6,11 +7,10 @@ export const selectors = {
     //addPartsManuallyButton: "", - No proper selector
 }
 
-export class PartsPage {
-    readonly page: Page;
+export class PartsPage extends BasePage {
 
     constructor(page: Page) {
-        this.page = page;
+        super(page, '');
     }
 
     async addPartToStock(partName: string, quantity: string, purchasePrice: string, salesPrice: string, partNumber: string, orderNumber: string) {
